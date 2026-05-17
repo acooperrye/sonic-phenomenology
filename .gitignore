@@ -1,0 +1,38 @@
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Stale git dir from failed first-init attempt (sandbox couldn't delete .git lockfile).
+# Safe to remove manually with: rm -rf .git_broken_skip_this
+.git_broken_skip_this/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# Audio working files (the working project lives in Music/Rhythm Dictionary)
+*.wav
+*.mp3
+*.m4a
+*.aiff
+
+# Migration markers — superseded source files from the merge-and-cleave (2026-05-17).
+# Safe to delete manually once you've confirmed the canonical files are intact.
+*.SUPERSEDED
+engine-web-original.md
+snapshot-thematic-dimensionality-web-scoring.md
+engine-cultural-original.md
+dictionary/_correction-pending.md
