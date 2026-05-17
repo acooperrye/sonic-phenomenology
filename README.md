@@ -10,7 +10,7 @@ A music analysis framework. Alex feels, Claude reads. Convergence across indepen
 
 ## What this is
 
-A multi-stage pipeline for analysing music that treats the body as a measurement instrument alongside the spectrogram.
+A multi-stage pipeline for broadly analysing music that treats the body as a somatic measurement instrument alongside the use of binary drawn directly from the digital file of a piece of music itself. Both equal in importance, both informing one another. Allows for "non-musically" experienced or oriented people to discuss music in a higher order way using a nifty flow of analysis engines, AI tools & discussion inside the AI chat window.
 
 Audio enters the Binary Engine, which emits a structural descriptor across 55 spectral elements. In parallel, artist and title enter the Web Engine, which emits a context descriptor — genre, thematic vector across ten meta-dimensions, and production method. The two outputs meet at the Activation Layer, which applies three filters (genre markedness, thematic alignment, production attribution) to turn 216 inert axis readings into weighted, signed findings. The Cultural Engine scores entrenchment and convention violation. The Interpretive Engine runs seven bridge types looking for somatic-structural tension, with the option to re-enter Binary or Web at higher resolution. The conversation closes when human somatic data enters as the final pass and overrules engine values where they disagree.
 
