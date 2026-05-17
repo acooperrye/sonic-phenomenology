@@ -1,45 +1,57 @@
-# sonic-phenomenology — Cowork plugin
+# Sonic Phenomenology — Plugin Release v0.1.4
 
-A Claude plugin that lets you run a phenomenological reading of any piece
-of music: audio in one ear, artist-and-title context in the other,
-cultural conventions as a third independent axis, and your own felt
-response as the final ground truth.
+A Claude plugin that lets you run a phenomenological reading of any piece of
+music. Audio in one ear, artist-and-title context in the other, cultural
+conventions as a third independent axis, your felt response as the final
+ground truth. Convergence across independent axes is the signal.
 
-**Convergence across independent axes is the signal.**
+## Install (this archive)
 
-## What this plugin gives you
+This zip is a complete Claude plugin. To install:
 
-One skill, `sonic-phenomenology`, that activates when you ask Claude to
-analyse a track, read what a song is doing to your body, or run the
-phenomenology pipeline by name. The skill is a thin loader — it fetches
-the current engine specs live from
-[github.com/acooperrye/sonic-phenomenology](https://github.com/acooperrye/sonic-phenomenology)
-on each session and applies them to whatever input you bring. Updates to
-the dictionaries, baselines, or engine modules propagate automatically;
-you don't need to reinstall the plugin to inherit them.
+- **In Cowork** — open Plugins → Personal plugins → "+" → upload this
+  `.plugin` file. Cowork extracts it and registers the skill automatically.
+- **In Claude Code** — drop the extracted folder into your plugins directory,
+  or use `/plugin install` against the extracted path.
 
-## Install
+After install, trigger it in any session with:
+- *"do a sonic-phenomenology read of [track]"*
+- *"what is this song doing to me"*
+- *"run a phenomenological analysis on [artist — title]"*
 
-If you're already using a Cowork or Claude Code marketplace, add this
-repo as a marketplace and install the plugin:
+## Install (recommended — marketplace, auto-updates)
+
+For automatic version tracking, add the source repo as a plugin marketplace
+instead:
 
 ```
 /plugin marketplace add acooperrye/sonic-phenomenology
 /plugin install sonic-phenomenology@sonic-phenomenology
 ```
 
-Then trigger it by saying something like "do a sonic-phenomenology read
-of [track]" or "what is this song doing to me."
+The skill live-fetches the engine specs from the repo's `main` branch on
+each session, so dictionary and baseline updates propagate automatically.
 
-## What you can bring to a reading
+## What's in this zip
 
-- An audio file or recording link
-- An artist and title
-- Both
-- Only your somatic response — "this hit my chest at the bridge"
+Standard Claude-plugin layout:
 
-The skill routes through the appropriate engines based on what you
-provide. The pipeline is:
+```
+sonic-phenomenology-0.1.4/
+├── .claude-plugin/plugin.json        ← plugin manifest
+├── README.md                         ← this file
+└── skills/
+    └── sonic-phenomenology/
+        └── SKILL.md                  ← the skill — read this to see what it does
+```
+
+The heart of the plugin is `skills/sonic-phenomenology/SKILL.md`. Open it
+directly if you want to see how the framework is invoked before installing.
+
+## What the plugin does
+
+You bring one of: an audio file, an artist+title, both, or just your felt
+response. The skill routes through the appropriate stages of the framework:
 
 ```
 audio  ─▶ 1a Binary Engine ─┐
@@ -47,47 +59,35 @@ audio  ─▶ 1a Binary Engine ─┐
 artist+title ─▶ 1b Web Engine ─▶ 2 Activation Layer ─▶ 3 Cultural Engine ─▶ 4 Interpretive Engine ─▶ Your body
 ```
 
-Your felt response overrules computed inference where they disagree.
-That's the load-bearing rule: never overwrite what was felt together
+Your felt response overrules computed inference where they disagree. That's
+the framework's load-bearing rule: never overwrite what was felt together
 with what was computed alone.
 
-## Network requirements
+## Network
 
-The skill calls `WebFetch` against `raw.githubusercontent.com` to pull
-engine specs at runtime. Any Cowork or Claude Code session with default
-network access will work. No GitHub account or auth needed — the repo is
-public.
+The skill issues HTTP GETs against `raw.githubusercontent.com` for engine
+specs at runtime, and uses web search for the Web Engine path. The fetch
+tool name depends on the runtime: `mcp__workspace__web_fetch` in Cowork,
+`WebFetch` in Claude Code CLI. SKILL.md's Step 0 picks the right one, and
+Step 3 lists every sub-spec URL in full so the runtime's URL-provenance
+filter doesn't block them. Any session with default network access works —
+no GitHub account or auth needed, the repo is public.
 
-If the Web Engine path is in use, `WebSearch` is also called to retrieve
-genre and production context for the artist+title input. Most Claude
-products allow this by default.
+## Changelog
 
-## What it doesn't do
+- **0.1.4** — SKILL.md Step 0 added so the skill picks the right HTTP fetch
+  tool per runtime (Cowork's `mcp__workspace__web_fetch` vs. Claude Code's
+  `WebFetch`). Step 3 sub-spec table converted to fully-qualified URLs so
+  runtimes with URL-provenance filtering (e.g. Cowork) can fetch each
+  engine spec without prior mention in conversation. Fixes silent
+  failure-to-orient that hit Cowork sessions in 0.1.3.
+- **0.1.3** — initial public release.
 
-This plugin doesn't run the Python suppression-audio encoder (the part
-of the framework that turns a genre's complete analysis into actual
-stereo audio with FSK-encoded JSON metadata). That's a maintainer-side
-tool. The plugin gives you access to the *analytical* surface — Claude
-reading the engine specs and applying them to your track. The
-audio-as-data piece lives at the source repo if you want to run it
-yourself.
+## Links
 
-## Versioning
-
-The plugin is pinned at version 0.1.3 in `plugin.json`. The engine
-content the skill fetches is *not* pinned — it tracks `main` of the
-source repo, so dictionary and baseline updates land in your sessions
-without a plugin reinstall. To freeze a reading against a specific
-version of the engines, edit the URLs in the skill's SKILL.md to
-substitute a tag or commit SHA for `main`.
-
-The framework versions the engines independently of the plugin. Breaking
-protocol changes are governed by the protocol version in
-`0-shared/shared-protocol.md` at the source repo.
-
-## Project links
-
+- Source repo and full framework: [github.com/acooperrye/sonic-phenomenology](https://github.com/acooperrye/sonic-phenomenology)
 - Public brief: [atcooper.net/tools/sonic-phenomenology](https://atcooper.net/tools/sonic-phenomenology)
-- Source repo: [github.com/acooperrye/sonic-phenomenology](https://github.com/acooperrye/sonic-phenomenology)
 
-> *You feel. The engine reads. Convergence across independent axes is the signal.*
+## License
+
+MIT.
