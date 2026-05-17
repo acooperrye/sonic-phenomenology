@@ -74,7 +74,7 @@ yourself.
 
 ## Versioning
 
-The plugin is pinned at version 0.1.0 in `plugin.json`. The engine
+The plugin is pinned at version 0.1.1 in `plugin.json`. The engine
 content the skill fetches is *not* pinned — it tracks `main` of the
 source repo, so dictionary and baseline updates land in your sessions
 without a plugin reinstall. To freeze a reading against a specific
@@ -85,10 +85,9 @@ The framework versions the engines independently of the plugin. Breaking
 protocol changes are governed by the protocol version in
 `0-shared/shared-protocol.md` at the source repo.
 
-## Authorship
+## Project links
 
-Built by Alexander Cooper-Rye. Public brief and the broader project
-context at [atcooper.net/tools/sonic-phenomenology](https://atcooper.net/tools/sonic-phenomenology).
+- Public brief: [atcooper.net/tools/sonic-phenomenology](https://atcooper.net/tools/sonic-phenomenology)
+- Source repo: [github.com/acooperrye/sonic-phenomenology](https://github.com/acooperrye/sonic-phenomenology)
 
-> *Alex feels. Claude reads. Convergence across independent axes is the
-> signal.*
+> *You feel. The engine reads. Convergence across independent axes is the signal.*

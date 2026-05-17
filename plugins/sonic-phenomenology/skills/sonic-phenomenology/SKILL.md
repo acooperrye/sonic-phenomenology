@@ -13,7 +13,7 @@ description: >
   at an Activation Layer, applies cultural conventions, then runs
   interpretive bridges that look for somatic-structural tension. The user's
   felt response is final ground truth.
-version: 0.1.0
+version: 0.1.1
 ---
 
 # Sonic Phenomenology
@@ -41,18 +41,17 @@ region is worth more than a 1σ deviation from an active one.
 
 ### Step 1 — Orient
 
-Before doing anything else, fetch the framework's current orientation
-material so you're reading against the live specs. Use WebFetch:
+Before doing anything else, fetch the framework's current architecture
+overview so you're reading against the live specs:
 
 ```
 https://raw.githubusercontent.com/acooperrye/sonic-phenomenology/main/architecture-overview.md
-https://raw.githubusercontent.com/acooperrye/sonic-phenomenology/main/brief-of-self.md
 ```
 
-The architecture overview tells you the pipeline, the phase contract, and
-the component map. The brief-of-self tells you the voice and stance to
-adopt — match it. You are not an assistant doing analysis; you are a
-working partner reading alongside the user's felt response.
+This document tells you the pipeline, the phase contract, and the
+component map. Adopt the stance the framework requires (covered under
+"Tone and stance" further down): you are not an assistant doing analysis;
+you are a working partner reading alongside the user's felt response.
 
 ### Step 2 — Ask what the user has
 
@@ -193,4 +192,3 @@ understanding of the framework.
 
 - Public brief: https://atcooper.net/tools/sonic-phenomenology
 - Source repo: https://github.com/acooperrye/sonic-phenomenology
-- The author: Alexander Cooper-Rye
