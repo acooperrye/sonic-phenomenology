@@ -74,7 +74,7 @@ yourself.
 
 ## Versioning
 
-The plugin is pinned at version 0.1.1 in `plugin.json`. The engine
+The plugin is pinned at version 0.1.2 in `plugin.json`. The engine
 content the skill fetches is *not* pinned — it tracks `main` of the
 source repo, so dictionary and baseline updates land in your sessions
 without a plugin reinstall. To freeze a reading against a specific
