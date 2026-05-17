@@ -6,6 +6,19 @@ A music analysis framework. Alex feels, Claude reads. Convergence across indepen
 
 → Public brief: [atcooper.net/tools/sonic-phenomenology](https://atcooper.net/tools/sonic-phenomenology)
 
+## Install as a Claude plugin
+
+If you use Cowork or Claude Code, you can add this repo as a plugin marketplace and install the loader skill in one step:
+
+```
+/plugin marketplace add acooperrye/sonic-phenomenology
+/plugin install sonic-phenomenology@sonic-phenomenology
+```
+
+Then trigger it in any session by saying something like *"do a sonic-phenomenology read of [track]"* or *"what is this song doing to me."* The skill fetches the engine specs live from this repo each session, so dictionary and baseline updates propagate without reinstalling.
+
+See [plugins/sonic-phenomenology/README.md](./plugins/sonic-phenomenology/README.md) for plugin-specific docs.
+
 ---
 
 ## What this is

@@ -1,0 +1,19 @@
+{
+  "name": "sonic-phenomenology",
+  "version": "0.1.0",
+  "description": "Live-fetching loader for the Sonic Phenomenology music-analysis framework. Treats the body as a measurement instrument alongside the spectrogram. Audio enters the Binary Engine, artist+title enters the Web Engine, the two meet at the Activation Layer, the Cultural Engine scores convention violation, and the Interpretive Engine runs seven bridge types looking for somatic-structural tension. The user's felt response is final ground truth.",
+  "author": {
+    "name": "Alexander Cooper-Rye",
+    "email": "acooperrye@gmail.com"
+  },
+  "homepage": "https://atcooper.net/tools/sonic-phenomenology",
+  "repository": "https://github.com/acooperrye/sonic-phenomenology",
+  "keywords": [
+    "music",
+    "analysis",
+    "phenomenology",
+    "audio",
+    "somatic",
+    "spectral"
+  ]
+}

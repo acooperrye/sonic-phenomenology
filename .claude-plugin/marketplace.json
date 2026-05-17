@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "sonic-phenomenology",
+  "description": "Plugin marketplace for the Sonic Phenomenology music-analysis framework. Hosts the loader plugin that gives any Cowork or Claude Code session live access to the engine specs, dictionaries, and baselines maintained in this repository.",
+  "version": "0.1.0",
+  "owner": {
+    "name": "Alexander Cooper-Rye",
+    "email": "acooperrye@gmail.com"
+  },
+  "metadata": {
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "sonic-phenomenology",
+      "source": "./plugins/sonic-phenomenology",
+      "description": "Live-fetching loader for the Sonic Phenomenology framework. Audio enters the Binary Engine, artist+title enters the Web Engine, the two meet at the Activation Layer, the Cultural Engine scores convention violation, and the Interpretive Engine runs seven bridge types looking for somatic-structural tension. The user's felt response is final ground truth.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Alexander Cooper-Rye",
+        "email": "acooperrye@gmail.com"
+      },
+      "homepage": "https://atcooper.net/tools/sonic-phenomenology",
+      "repository": "https://github.com/acooperrye/sonic-phenomenology",
+      "license": "MIT",
+      "keywords": [
+        "music",
+        "analysis",
+        "phenomenology",
+        "audio",
+        "somatic",
+        "spectral"
+      ],
+      "category": "creative",
+      "tags": [
+        "music-analysis",
+        "phenomenology",
+        "audio",
+        "live-fetch"
+      ]
+    }
+  ]
+}
