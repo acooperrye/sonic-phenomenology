@@ -157,7 +157,7 @@ Production transparency predicts engine accuracy:
 
 Magnitude-based percussion identification fails when multiple elements share a frequency band at different energy levels. In Phoneline, five independent extraction methods failed to isolate the kick drum from the bass synth and snare bleed in the 30-150 Hz band: time-domain amplitude, HPSS ratio, bandpass energy, onset detection phase maps, and energy deposit/withdrawal ratios. All measure HOW MUCH energy, not WHAT KIND.
 
-### The Insight (Alex Cooper-Rye)
+### The Insight (The listener Cooper-Rye)
 
 "You need to plot where it comes on and plot where it leaves off in the 2D space of the actual wave. It's a parabola from the spike in the spectrogram where it onsets to the point in the spectrogram where it is gone again."
 
@@ -186,7 +186,7 @@ Shape-first identification should precede timing characterization. The current S
 
 ### Validation Status
 
-Validated on one song (Phoneline). Downward sweeps clustered at beats 1 and 3 (68.5%) matching Alex's somatic description exactly. Needs validation on additional tracks, especially: (a) songs with pitched 808 kicks (different sweep shape expected), (b) songs with acoustic kicks (similar downward sweep expected but different bandwidth), (c) songs with no kick (should find zero downward sweeps in the low band).
+Validated on one song (Phoneline). Downward sweeps clustered at beats 1 and 3 (68.5%) matching the listener's somatic description exactly. Needs validation on additional tracks, especially: (a) songs with pitched 808 kicks (different sweep shape expected), (b) songs with acoustic kicks (similar downward sweep expected but different bandwidth), (c) songs with no kick (should find zero downward sweeps in the low band).
 
 ---
 
@@ -353,7 +353,7 @@ VALIDATED (2026-02-09). Spectral ceiling detection works in full mixes after two
 
 ## COMPRESSION VECTOR FRAMEWORK (VALIDATED)
 
-### Core Insight (Alex Cooper-Rye, 2026-02-09)
+### Core Insight (The listener Cooper-Rye, 2026-02-09)
 
 Compression floors from the bitrate ladder ARE vectors for analysis. A dictionary of sounds needs only:
 1. The PURE endpoint (highest quality)

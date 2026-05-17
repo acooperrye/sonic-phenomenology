@@ -1,6 +1,6 @@
 # MODULE: FELTNESS ASYMPTOTE
 ## Status: DRAFT — working hypothesis, not validated
-## Origin: Alex's observation that the anti-voice (80-1100Hz notch) didn't sound hollow
+## Origin: the listener's observation that the anti-voice (80-1100Hz notch) didn't sound hollow
 
 ---
 
@@ -11,7 +11,7 @@ Claude generated an "anti-voice" sound: full harmonic spectrum with the entire v
 **Expected:** Hollow, gutted, a body with no torso.
 **Actual:** "Quite haunting. Sounds like the background hum of a VHS tape. It doesn't sound hollow at all."
 
-Alex's explanation: "Even though 20-80Hz is only 60Hz [of bandwidth], it mechanically accounts for a lot more movement than probably most of the top end. So the hollowness is visible in numbers, it is not felt."
+The listener's explanation: "Even though 20-80Hz is only 60Hz [of bandwidth], it mechanically accounts for a lot more movement than probably most of the top end. So the hollowness is visible in numbers, it is not felt."
 
 Then: "There's probably a way to gradient the feltness of all the Hz on some kind of... what, like, asymptote?"
 
@@ -63,7 +63,7 @@ Every doubling of frequency reduces felt weight by ~7.1dB.
 ## WHAT'S PROBABLY WRONG WITH THIS
 
 ### 1. The gate thresholds are rough
-The thresholds (85dB for sub-bass, 120dB for highs) come from vibrotactile research and whole-body vibration standards. They're population averages, not calibrated to Alex. They also assume a specific listening condition (whole-body exposure at those SPLs), which doesn't match headphone or car listening exactly.
+The thresholds (85dB for sub-bass, 120dB for highs) come from vibrotactile research and whole-body vibration standards. They're population averages, not calibrated to the listener. They also assume a specific listening condition (whole-body exposure at those SPLs), which doesn't match headphone or car listening exactly.
 
 ### 2. "Weight per Hz" may be the wrong unit
 The curve treats every Hz within a band as equal, which it isn't. 20Hz and 79Hz are both "sub-bass" but they don't feel the same. The curve should probably be continuous, not band-averaged. The power law fit IS continuous but it's derived from only 6 data points (band centers).
@@ -97,13 +97,13 @@ Each channel would have its own weighting curve. The "feltness asymptote" might 
 ## WHAT WOULD VALIDATE OR INVALIDATE THIS
 
 ### Tests that could refine the curve:
-1. **SPL sweep with Alex in the car**: Play a flat-spectrum tone and slowly increase volume. At what SPL does each frequency band cross from heard to felt? This would give Alex-specific gate thresholds rather than population averages.
+1. **SPL sweep with the listener in the car**: Play a flat-spectrum tone and slowly increase volume. At what SPL does each frequency band cross from heard to felt? This would give the listener-specific gate thresholds rather than population averages.
 
-2. **Sub-bass removal test**: Take a song Alex knows well (PUTP?), notch out sub-bass entirely, play at volume. How much felt experience is lost? If the curve is right, removing sub-bass should remove ~96% of somatic presence. If it removes less, the curve is too steep.
+2. **Sub-bass removal test**: Take a song the listener knows well (PUTP?), notch out sub-bass entirely, play at volume. How much felt experience is lost? If the curve is right, removing sub-bass should remove ~96% of somatic presence. If it removes less, the curve is too steep.
 
 3. **Mid-range isolation test**: Play ONLY the 500-2000Hz range of a song at high volume. Does ANYTHING cross the gate? The curve says this band needs 110dB to be felt. At 108dB playback, it shouldn't cross. But the Shout snare and jellyfish steel drums are felt in this range — suggesting transient crest factor punches above the threshold even when average energy doesn't.
 
-4. **Perceptual matching**: Ask Alex to adjust the level of each band until they "feel equal." This would give a direct feltness-loudness contour calibrated to Alex, bypassing the gate threshold derivation entirely.
+4. **Perceptual matching**: Ask the listener to adjust the level of each band until they "feel equal." This would give a direct feltness-loudness contour calibrated to the listener, bypassing the gate threshold derivation entirely.
 
 ---
 
@@ -117,7 +117,7 @@ This module connects to:
 
 ---
 
-## THE BASS-SUBBASS COUPLING (Alex, 9 Feb 2026)
+## THE BASS-SUBBASS COUPLING (9 Feb 2026)
 
 **Critical reframe:** Bass and sub-bass are not separate bands — they're enmeshed. The band boundary at 80Hz is a measurement convenience, not a perceptual reality.
 
@@ -149,7 +149,7 @@ The correct framework might not be "somatic weight per Hz" but something more li
 
 ---
 
-## ADDITIONAL PHYSICS (Alex's research, 9 Feb 2026)
+## ADDITIONAL PHYSICS (The listener's research, 9 Feb 2026)
 
 The feltness asymptote involves at least four stacking physical mechanisms:
 
@@ -165,7 +165,7 @@ The feltness asymptote involves at least four stacking physical mechanisms:
 
 ---
 
-## THE DERIVATIVE REFRAME (Alex + headroom analysis, 9 Feb 2026)
+## THE DERIVATIVE REFRAME (The listener + headroom analysis, 9 Feb 2026)
 
 **"It's specifically the envelope of 'attack' that attacks at the somatic body."**
 
@@ -196,9 +196,9 @@ Sub-bass lives close to its physical limit. High frequencies have essentially un
 - **The body's change-detection is calibrated to the attack rates that physical objects actually produce at those frequencies.** This is the natural tempo principle (correspondence #14) applied to the feltness curve.
 - **The derivative matters most where headroom is least.** Sub-bass has the narrowest window between "too slow to feel as attack" and "too fast for waveform to establish." The felt sweet spot is a narrow band, and production has converged on it because physics demands it.
 
-### The full gesture: onset + offset + silence (Alex, 9 Feb 2026)
+### The full gesture: onset + offset + silence (9 Feb 2026)
 
-The derivative alone is insufficient. Alex's correction: "the punch is in both the onset ratio being ~4x, but also in the time that the offset arrives from onset."
+The derivative alone is insufficient. The listener's correction: "the punch is in both the onset ratio being ~4x, but also in the time that the offset arrives from onset."
 
 The body doesn't read the attack in isolation. It reads the **complete gesture**: how fast the energy arrives, how long it stays, how fast it leaves, and how long until it comes back. Four parameters:
 
@@ -207,9 +207,9 @@ The body doesn't read the attack in isolation. It reads the **complete gesture**
 3. **Offset slope** (dE/dt, negative) — how fast energy leaves (the "withdrawal")
 4. **Silence duration** — time before next onset (the "reset")
 
-Note (Alex): onset and offset slope are both dE/dt — the same underlying quantity, just measured at different phases. Kept as separate gesture parameters because they do different somatic work: the onset signals "something is happening," the offset signals "it stopped," and the offset retroactively rewrites the meaning of the onset. Fast onset + slow offset = push. Fast onset + fast offset = slap. Fast onset + near-instantaneous offset (gated snare) = severance. Same onset derivative, completely different gesture, because the withdrawal changes what the arrival meant.
+Note (The listener): onset and offset slope are both dE/dt — the same underlying quantity, just measured at different phases. Kept as separate gesture parameters because they do different somatic work: the onset signals "something is happening," the offset signals "it stopped," and the offset retroactively rewrites the meaning of the onset. Fast onset + slow offset = push. Fast onset + fast offset = slap. Fast onset + near-instantaneous offset (gated snare) = severance. Same onset derivative, completely different gesture, because the withdrawal changes what the arrival meant.
 
-Alex's analogy: "If I move my fist into your face at 5.2x speed and leave it there, you just got touched very weirdly. If I smack into you at 20.4x speed, move my hand back as well because the sub-bass drops out just as soon, and then repeat the gesture within the next bar — yeah, that feels like punching."
+The listener's analogy: "If I move my fist into your face at 5.2x speed and leave it there, you just got touched very weirdly. If I smack into you at 20.4x speed, move my hand back as well because the sub-bass drops out just as soon, and then repeat the gesture within the next bar — yeah, that feels like punching."
 
 Applied to dictionary:
 - **PUTP 808**: Fast onset (20.4x) → short sustain → fast offset (sub-bass drops within the beat) → silence → repeat at next bar. **Complete punch gesture.** The offset is doing as much work as the onset — the withdrawal IS the fist pulling back.
@@ -237,15 +237,15 @@ The feltness asymptote might not be a weighting curve at all. It might be a **se
 7. If the body is a change detector, is there a minimum attack slope below which sub-bass transitions from "event" to "atmosphere"? Where is that threshold? (The Blade Runner pad and PUTP 808 bracket it — one is atmosphere, the other is event. Something between their onset ratios is the crossover.)
 8. Does the derivative-sensitivity differ between in-ear and in-air? In-ear collapses propagation differences, so the body receives the attack as purely auditory. In-air, the mechanical coupling means the body's pressure-change detectors are engaged directly. The derivative might matter MORE in-air.
 9. For the full gesture model: what's the minimum silence-duration-before-next-onset needed for the body to "reset" and feel the next hit as a new event rather than a continuation? Is this related to the headroom ratio? (If sub-bass headroom is 5x, maybe the body needs ~80% of the headroom window as silence to reset — which would be ~400ms at 120 BPM, roughly matching typical 808 patterns.)
-10. ~~Can you create an "anti-punch" — fast onset, long sustain, NO offset (sustain decays into atmosphere)? Would the body feel the initial hit and then lose track of the sub-bass as it acclimates? A hybrid gesture: punch that melts into place.~~ **ANSWERED (Alex, 9 Feb 2026):** No anchoring. The somatic read has a shelf life. See polling model below.
+10. ~~Can you create an "anti-punch" — fast onset, long sustain, NO offset (sustain decays into atmosphere)? Would the body feel the initial hit and then lose track of the sub-bass as it acclimates? A hybrid gesture: punch that melts into place.~~ **ANSWERED (9 Feb 2026):** No anchoring. The somatic read has a shelf life. See polling model below.
 
 ---
 
-## THE POLLING MODEL (Alex, 9 Feb 2026)
+## THE POLLING MODEL (9 Feb 2026)
 
 The body is not performing continuous real-time derivative calculation. It's **sampling and diffing against a rolling buffer** of recent history, roughly ~10 seconds (this number is hypothetical but functionally useful).
 
-The process (Alex's formulation, approximate 1-second polling cycles):
+The process (The listener's formulation, approximate 1-second polling cycles):
 - **Cycle 1 (onset):** Change detected. New state differs from previous buffer contents. Somatic channel reports: felt event.
 - **Cycles 2-3:** Still present. Buffer is partially filled with new state but still contains the "before." Diff still returns non-zero. Somatic read persists but weakening.
 - **Cycles 4-6:** Buffer mostly overwritten. The current state IS most of the comparison window. Diff approaches zero. Felt quality fading.
@@ -275,4 +275,4 @@ The 120 BPM sweet spot for 808 patterns might not be an aesthetic convention. It
 ---
 
 *Module created: 9 February 2026*
-*Status: Working hypothesis. Needs Alex-calibrated data before promotion to framework.*
+*Status: Working hypothesis. Needs the listener-calibrated data before promotion to framework.*

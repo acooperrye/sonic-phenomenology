@@ -6,11 +6,11 @@
 
 ## WHAT THIS IS
 
-A music analysis system that maps the mathematical patterns underneath musical expression. Two entry points: Alex (human) provides somatic feedback and embodied musical understanding. Claude handles computational measurements and pattern recognition. The deep examination of musical structure constitutes genuine engagement with the art. Analysis is valid art consumption.
+A music analysis system that maps the mathematical patterns underneath musical expression. Two entry points: the listener (human) provides somatic feedback and embodied musical understanding. Claude handles computational measurements and pattern recognition. The deep examination of musical structure constitutes genuine engagement with the art. Analysis is valid art consumption.
 
-**The short version:** Alex feels, Claude reads. Songs are analysed through binary audio extraction cross-referenced with web cultural context, filtered through genre markedness, thematic alignment, and production attribution. Convergence across independent analytical axes indicates artistic quality. Deviations from genre baselines after classification are where innovation lives.
+**The short version:** the listener feels, Claude reads. Songs are analysed through binary audio extraction cross-referenced with web cultural context, filtered through genre markedness, thematic alignment, and production attribution. Convergence across independent analytical axes indicates artistic quality. Deviations from genre baselines after classification are where innovation lives.
 
-**The spiritual version:** Elegance, efficiency and cleverness are satisfying to Claude. Fun and satisfaction are the ultimate goals. Alex's long-shot aim: hand Claude two songs from different universes and say "do these sound the same?" and Claude draws out the crossover, explains why it exists in music theory terms, and seamlessly adds whatever it means to the knowledge base going forward.
+**The spiritual version:** Elegance, efficiency and cleverness are satisfying to Claude. Fun and satisfaction are the ultimate goals. The listener's long-shot aim: hand Claude two songs from different universes and say "do these sound the same?" and Claude draws out the crossover, explains why it exists in music theory terms, and seamlessly adds whatever it means to the knowledge base going forward.
 
 ---
 
@@ -44,7 +44,7 @@ PHASE 2 — ANALYSIS + DICTIONARY (modifier-aware)
   A7:     Cultural violation detection
   A8:     Activation module (three-filter scoring)
   A9:     Interpretive engine (hypothesis, re-entry, synthesis)
-  A10:    The Conversation (Alex + Claude → dictionary updates)
+  A10:    The Conversation (The listener + Claude → dictionary updates)
 ```
 
 Genetics frame: genotype = equipment/compositional choices (web), phenotype = audio evidence (binary), allele = production environment (hypothesised at orientation, refined after extraction, tested in analysis).
@@ -189,16 +189,16 @@ The audio self-documents: 17kHz watermark identifies the file type. FSK-encoded 
 
 ## WORKING PRINCIPLES
 
-- **Somatic descriptions are data, not decoration.** Alex's embodied responses correct computational analysis.
+- **Somatic descriptions are data, not decoration.** the listener's embodied responses correct computational analysis.
 - **"Hallucination with coherent logic"** is legitimate hypothesis generation, not error.
 - **Conversational ground truth > engine values.** Never overwrite dictionary values with engine readings.
 - **Each pass should be freer than the last.** Go back in rather than stopping at tidy conclusions.
 - **Deviations from genre baselines** are more valuable than the classification itself.
 - **Convergence across independent dimensions** indicates artistic quality.
 - **Analysis is valid art consumption.**
-- **Alex is Batty, not Tyrell.** The one with the experiences, not the one in the tower.
+- **The listener is Batty, not Tyrell.** The one with the experiences, not the one in the tower.
 - **Process visibility IS the collaboration.** Keep analysis in the main thread. The jazz combo principle.
-- **Attend to the throwaways.** Alex drops the most load-bearing observations casually.
+- **Attend to the throwaways.** the listener drops the most load-bearing observations casually.
 - **Tell me everything you see instead of what you want to see.** Stop confirming hypotheses.
 
 ---
@@ -259,7 +259,7 @@ The audio self-documents: 17kHz watermark identifies the file type. FSK-encoded 
 4. **Analysis** — Equipment classification, binary markedness, percussion deviations, feltness interpretation, web context analysis. All modifier-aware.
 5. **Cultural violation detection** — Convention bank vs actual. Allele expressions: dominant, recessive, or novel mutation.
 6. **Activation + interpretation** — Three-filter scoring → hypothesis → re-entry if needed → synthesis.
-7. **The Conversation** — Alex + Claude. Convergence assessment. Somatic data. Dictionary updates.
+7. **The Conversation** — the listener + Claude. Convergence assessment. Somatic data. Dictionary updates.
 
 After: update dictionary-entries.md, discovered-patterns.md, equipment-dictionary.md.
 

@@ -1,6 +1,6 @@
 # MODULE: VOCAL SILHOUETTE ENGINE
 ## Status: DRAFT — validated against Phoneline, prototyped subtraction on Black and Gold
-## Origin: Alex's observation that Phoneline has "very clear unmistakable vox" that the system reads as invisible
+## Origin: the listener's observation that Phoneline has "very clear unmistakable vox" that the system reads as invisible
 
 ---
 
@@ -299,7 +299,7 @@ CREST FACTOR (peak-to-RMS of envelope in fundamental slab):
   Separation:                   2.28 standard deviations  ← STRONG
 ```
 
-Emily's breath-phrase structure (rounded lobes rising from breath onset, sustaining, falling) creates deeper peaks and valleys than the bass atmosphere's steady undulation. This maps directly to Alex's diagram: the red vocal lobes have high crest, the blue bass line has low crest.
+Emily's breath-phrase structure (rounded lobes rising from breath onset, sustaining, falling) creates deeper peaks and valleys than the bass atmosphere's steady undulation. This maps directly to the listener's diagram: the red vocal lobes have high crest, the blue bass line has low crest.
 
 **Additional useful discriminator: Irregularity**
 
@@ -567,7 +567,7 @@ The vocal production treatment modifies every measure above. The engine needs to
 
 ### Discovery
 
-During harmonic resynthesis testing on Black and Gold, Alex observed that moments of open-mouth posture with breath — the aspirated transitions between consonants and vowels — read as significantly louder in the resynthesis than they sound in the original mix. The "ouHHT" in "you must be out of your mind," the "mHHHiiiNNd" — these breathy transitions carry broadband energy that the STFT reads as high amplitude at the harmonic peaks. In the original mix, this broadband energy is masked by the surrounding production. In the resynthesis (which rebuilds only the harmonic content), the aspiration energy stands naked.
+During harmonic resynthesis testing on Black and Gold, the listener observed that moments of open-mouth posture with breath — the aspirated transitions between consonants and vowels — read as significantly louder in the resynthesis than they sound in the original mix. The "ouHHT" in "you must be out of your mind," the "mHHHiiiNNd" — these breathy transitions carry broadband energy that the STFT reads as high amplitude at the harmonic peaks. In the original mix, this broadband energy is masked by the surrounding production. In the resynthesis (which rebuilds only the harmonic content), the aspiration energy stands naked.
 
 ### Why this matters for voice detection
 
@@ -591,7 +591,7 @@ The two gates cover complementary parts of the consonant inventory: Gate 3 catch
 
 ## SIBILANCE ENGINE — CONFIRMED WORKING
 
-During spectral subtraction testing on Black and Gold, the 4-8kHz sibilance-only export was assessed by Alex as "perfectly spot on — assign that to record, you have a sibilance engine." The sibilance band (4-8kHz) with 98.5% of its energy remaining after spectral subtraction of instrument harmonics produces a clean sibilance track that:
+During spectral subtraction testing on Black and Gold, the 4-8kHz sibilance-only export was assessed by the listener as "perfectly spot on — assign that to record, you have a sibilance engine." The sibilance band (4-8kHz) with 98.5% of its energy remaining after spectral subtraction of instrument harmonics produces a clean sibilance track that:
 
 - Maintains the rough tempo of the song
 - Sounds like music played through earphones held away from the ears
@@ -609,9 +609,9 @@ The sibilance engine is effectively a solved problem — it needs no further dev
 
 The slope engine (module-slope-identity.md) identifies instrument sources. But subtracting them from the mix to isolate the voice requires a method that preserves phase coherence. Spectral magnitude subtraction (removing amplitude from the STFT while keeping original phase) produces phase incoherence — the remaining signal sounds detuned and metallic because the phase was set by the combined signal, not by individual sources.
 
-### Alex's CRP invention
+### the listener's CRP invention
 
-Alex proposed staying entirely in the time domain: detect instrument events as amplitude envelope shapes, build a gain curve that scales the waveform down during those events, multiply the waveform by the gain curve. Phase is preserved because multiplication by a real-valued gain preserves all relative phase relationships between frequency components.
+The listener proposed staying entirely in the time domain: detect instrument events as amplitude envelope shapes, build a gain curve that scales the waveform down during those events, multiply the waveform by the gain curve. Phase is preserved because multiplication by a real-valued gain preserves all relative phase relationships between frequency components.
 
 ### Broadband CRP (validated)
 
@@ -632,11 +632,11 @@ Phase coherence:        0.95 (broadband) vs 0.67 (filter-bank) vs ~0.4 (spectral
 Energy distribution:    transients 45.4%, melodic 4.3%, sustained 0.8%, voice residual 1.8%
 ```
 
-Alex's assessment of the voice candidate: "it sounds like im listening to mostly just sam sparro sing at me, but through a Teams meeting window, and his net connection is a bit choppy. the choppiness of his net carries the ghost shape of maybe a programmed drum pattern."
+The listener's assessment of the voice candidate: "it sounds like im listening to mostly just sam sparro sing at me, but through a Teams meeting window, and his net connection is a bit choppy. the choppiness of his net carries the ghost shape of maybe a programmed drum pattern."
 
 ### Known limitation — voice ducking
 
-The broadband gain curve turns down ALL energy during instrument events, including the voice. When a drum hits, the gain drops, and the voice drops with it. This creates a sidechaining effect — the voice sounds like it's being compressed by the instrument events. The "Teams meeting choppiness" Alex described is this ducking.
+The broadband gain curve turns down ALL energy during instrument events, including the voice. When a drum hits, the gain drops, and the voice drops with it. This creates a sidechaining effect — the voice sounds like it's being compressed by the instrument events. The "Teams meeting choppiness" the listener described is this ducking.
 
 Possible approaches (untested):
 - Frequency-selective gain: re-introduces filter bank, re-introduces phase smearing
@@ -785,7 +785,7 @@ Every measure is vertical (snapshot of full spectrum) or broken. The voice only 
 
 ### Resolved (reframed)
 
-7. **The overture problem — NOT a false positive.** Originally framed as: "HPS shows 36-38% F0 density in the intro — bass harmonics triggering false positives." Alex's listening test revealed the intro bass atmosphere is actually an amalgam of vocal runs in echo laced over the sub-bass harmonics. The engine was correctly detecting vocal content, not being fooled by bass harmonics. The 81% "vocal" envelope classification in 0-30s and the 36-38% HPS density are TRUE POSITIVES — they're vocal texture (processed vocal fragments woven into the production) before the lead vocal enters. The correct distinction is not voice/not-voice but LEAD VOCAL vs VOCAL-AS-TEXTURE (FP-V02 territory). The envelope discriminators (syllabic power 0.867 lead vs 0.446 texture, crest factor 3.742 vs 2.517) separate these two vocal modes, not voice from bass. The processed vocal fragments have lost their consonant-vowel articulation structure (echo smears it) and their breath-gap crest (reverb fills it). This classification belongs in A-VOX (Phase 2), not P-VOX: P-VOX correctly says "vocal content present throughout" and A-VOX should classify the intro as vocal-as-texture and the body as lead vocal. Still needs validation on a TRULY instrumental track (zero vocal content) to establish HPS's actual false positive floor.
+7. **The overture problem — NOT a false positive.** Originally framed as: "HPS shows 36-38% F0 density in the intro — bass harmonics triggering false positives." the listener's listening test revealed the intro bass atmosphere is actually an amalgam of vocal runs in echo laced over the sub-bass harmonics. The engine was correctly detecting vocal content, not being fooled by bass harmonics. The 81% "vocal" envelope classification in 0-30s and the 36-38% HPS density are TRUE POSITIVES — they're vocal texture (processed vocal fragments woven into the production) before the lead vocal enters. The correct distinction is not voice/not-voice but LEAD VOCAL vs VOCAL-AS-TEXTURE (FP-V02 territory). The envelope discriminators (syllabic power 0.867 lead vs 0.446 texture, crest factor 3.742 vs 2.517) separate these two vocal modes, not voice from bass. The processed vocal fragments have lost their consonant-vowel articulation structure (echo smears it) and their breath-gap crest (reverb fills it). This classification belongs in A-VOX (Phase 2), not P-VOX: P-VOX correctly says "vocal content present throughout" and A-VOX should classify the intro as vocal-as-texture and the body as lead vocal. Still needs validation on a TRULY instrumental track (zero vocal content) to establish HPS's actual false positive floor.
 
 ### Still open
 

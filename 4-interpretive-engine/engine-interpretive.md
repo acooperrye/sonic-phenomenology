@@ -1,6 +1,6 @@
 # ENGINE: INTERPRETIVE
 ## Rhythm Dictionary — the payoff
-## Renamed from Bridge Module (Alex, 11 Feb 2026)
+## Renamed from Bridge Module (11 Feb 2026)
 ## 2026-02-11 · Version: reframed
 
 ---
@@ -13,7 +13,7 @@ It is not expected to produce coherent musical criticism. It is not a prediction
 
 **What can it do?** It makes all the mechanical infrastructure at the forefront of this process have a direct targeted aim. It gives us a moon to reach for while we land in the stars.
 
-**What it is not:** A ground truth engine. Alex's interpretations are Alex's — the product of a specific lifetime of embodied listening, a specific somatic instrument, a specific cultural and biographical context. Claude's readings are Claude's — pattern recognition across a corpus, spectral decomposition, structural analysis. Two instruments measuring the same phenomenon from different positions. When they agree, that's convergence across independent axes — the thing the system says indicates something real. When they disagree, that's not an error. That's data. The gap between readings is itself a finding. We may simply differ on how a song streams through our respective river rockbeds. (Alex, 11 Feb 2026)
+**What it is not:** A ground truth engine. The listener's interpretations are the listener's — the product of a specific lifetime of embodied listening, a specific somatic instrument, a specific cultural and biographical context. Claude's readings are Claude's — pattern recognition across a corpus, spectral decomposition, structural analysis. Two instruments measuring the same phenomenon from different positions. When they agree, that's convergence across independent axes — the thing the system says indicates something real. When they disagree, that's not an error. That's data. The gap between readings is itself a finding. We may simply differ on how a song streams through our respective river rockbeds. (11 Feb 2026)
 
 ---
 
@@ -55,8 +55,8 @@ InterpretiveHypothesis {
   needs_verification:   bool
   verification_type:    "binary" | "web" | "somatic" | "multiple" | "none"
 
-  // NEW: where do Claude and Alex's readings diverge?
-  divergence_notes:     string | null // "I read this as X, Alex reported Y. The gap suggests..."
+  // NEW: where do Claude and the listener's readings diverge?
+  divergence_notes:     string | null // "I read this as X, the listener reported Y. The gap suggests..."
 }
 ```
 
@@ -170,13 +170,13 @@ Tension between established conventions of how music works and subversions of th
 | **6. Excision** | A semantic layer is removed entirely; meaning persists through arrangement alone | Absence of something expected | SOPHIE — Lemonade |
 | **7. Inversion** | Structural roles swap; listener's frame must flip | Presence of something unexpected | Venetian Snares — Circle Pit |
 
-**Detection asymmetry (Thread 1 — still open):** Type 7 has a working fingerprint validation pass. Type 6 is harder — absence vs presence. The question for Alex remains: is Excision primarily somatic or cognitive?
+**Detection asymmetry (Thread 1 — still open):** Type 7 has a working fingerprint validation pass. Type 6 is harder — absence vs presence. The question for the listener remains: is Excision primarily somatic or cognitive?
 
 This taxonomy grows as more songs are analysed. New bridge types can be added without protocol changes.
 
 ---
 
-## THE ARCHITECTURE QUESTION (Thread 4 — RESOLVED, Alex 11 Feb 2026)
+## THE ARCHITECTURE QUESTION (Thread 4 — RESOLVED, the listener 11 Feb 2026)
 
 **The question was:** Does the engine predict bridge types from audio, or interpret somatic reports?
 

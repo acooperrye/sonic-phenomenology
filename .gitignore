@@ -36,3 +36,13 @@ engine-web-original.md
 snapshot-thematic-dimensionality-web-scoring.md
 engine-cultural-original.md
 dictionary/_correction-pending.md
+
+# Maintainer skill — Alex's private tooling for processing change orders.
+# Not part of the public engine surface. Remove this line if you want to
+# version the maintainer skill alongside the engines.
+_maintainer-skill/
+
+# Plugin distribution artifacts — keep build outputs out of source.
+# Generated and attached to GitHub Releases manually, not committed.
+*.skill
+*.plugin

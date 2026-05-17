@@ -188,7 +188,7 @@
    - Convention violations from ConventionReport → evidence for Excision (absence of expected element) or Inversion (role swap)
    - Percussion deviations from DeviationLog → evidence for structural meaning in timing choices
    - **Somatic data is Tier 1.** Computational data alone has never correctly identified a bridge type without somatic input. The Interpretive Engine can narrow candidates, but confirmation requires the Conversation.
-   - **Exploratory, not conclusive.** The engine opens questions. It does not converge on a single correct reading. Divergence between Claude's reading and Alex's somatic report is itself a finding.
+   - **Exploratory, not conclusive.** The engine opens questions. It does not converge on a single correct reading. Divergence between Claude's reading and the listener's somatic report is itself a finding.
 5. The Conversation: `InterpretivePresentation` + human somatic data → convergence assessment
    - Bridge type confirmation here, not in engine. The somatic gate model means the bridge IS the listener's response.
 
@@ -282,9 +282,9 @@ Each engine can be tested independently against the dictionary songs.
 
 ### Interpretive Engine test (formerly Bridge Engine):
 - Input: pre-computed ActivatedAxes + ConventionReport + ElementMeter[] + DeviationLog for a dictionary song
-- Expected: somatic prediction aligns with Alex's documented somatic reports. Convention violations correctly signal candidate bridge types (especially Types 6-7). Percussion deviations correctly interpreted as structural meaning.
+- Expected: somatic prediction aligns with the listener's documented somatic reports. Convention violations correctly signal candidate bridge types (especially Types 6-7). Percussion deviations correctly interpreted as structural meaning.
 - Hardest to automate — somatic ground truth is conversational. Computational data alone has never correctly identified a bridge type.
-- Divergence between Claude's reading and Alex's somatic report is itself a finding, not an error.
+- Divergence between Claude's reading and the listener's somatic report is itself a finding, not an error.
 
 ---
 

@@ -1,6 +1,6 @@
 # THE GENOMIC FRAME
 ## Rhythm Dictionary — Structural Architecture from Biology
-## 2026-02-11 · Alex & Claude
+## 2026-02-11 · the listener & Claude
 
 ---
 
@@ -218,7 +218,7 @@ Maps the external conditions affecting gene expression. Cultural context, produc
 
 Tracks allele frequencies across chromosome territories over time. The Convention Bank is a **gene frequency database**. The Fingerprint Registry is a **gene sequence catalogue**. The Genre-Fingerprint Map is a **tissue-specific expression atlas** — which genes are expressed in which cell type (genre).
 
-**The `entrenchment` field is settled (Alex, 11 Feb 2026).** It stays a float, but signed. The magnitude is the allele frequency (0.0–1.0). The sign is the direction of travel: positive = rising (spreading, being adopted), negative = falling (being rejected, fading). `+0.3` = 30% prevalent and gaining ground. `-0.3` = 30% prevalent and losing ground. The phase is emergent from the sign and magnitude — no separate phase field needed. `+0.95` is approaching fixation. `+1.0` is fixed. `-0.95` is the moment after the peak. `-0.05` is nearly silenced.
+**The `entrenchment` field is settled (11 Feb 2026).** It stays a float, but signed. The magnitude is the allele frequency (0.0–1.0). The sign is the direction of travel: positive = rising (spreading, being adopted), negative = falling (being rejected, fading). `+0.3` = 30% prevalent and gaining ground. `-0.3` = 30% prevalent and losing ground. The phase is emergent from the sign and magnitude — no separate phase field needed. `+0.95` is approaching fixation. `+1.0` is fixed. `-0.95` is the moment after the peak. `-0.05` is nearly silenced.
 
 For reactivated conventions (alleles that were previously silenced and are now rising again), the positive sign alone can't distinguish first-envelope from second-envelope. A single boolean handles this: `reactivated: true` means the current positive trajectory is a second curve, carrying epigenetic history. The convention is quoting itself.
 
@@ -226,7 +226,7 @@ The algebra is available when precision is needed: `entrenchment(t) = e^(-0.4(t-
 
 **Calculation sources** — the data that parameterizes the curves (when a convention emerged, peaked, was silenced, reactivated) — live in a separate reference file, populated and maintained by the Web Engine from cultural context: music journalism, academic studies, production histories, chart data, genre timelines. This is the fossil record. It's consulted when building or refreshing the curves, and when a conversation reveals a former premise was wrong — but not during routine analysis.
 
-**The flywheel (Alex, 11 Feb 2026):** Every Web Engine retrieval — even from a routine, mundane analysis — is a data point on convention timelines. Every song analyzed is a core sample from the fossil record. The curve-base gets denser and more accurate with every interaction, regardless of depth of inquiry. A routine analysis of a 2024 pop song that finds a gated snare confirms: the reactivation curve is still positive in pop at this date. That's a data point. At scale, this means the system's convention curves become empirically derived rather than estimated — the organism studies itself more accurately the more it's observed. The mundane feeds the profound.
+**The flywheel (11 Feb 2026):** Every Web Engine retrieval — even from a routine, mundane analysis — is a data point on convention timelines. Every song analyzed is a core sample from the fossil record. The curve-base gets denser and more accurate with every interaction, regardless of depth of inquiry. A routine analysis of a 2024 pop song that finds a gated snare confirms: the reactivation curve is still positive in pop at this date. That's a data point. At scale, this means the system's convention curves become empirically derived rather than estimated — the organism studies itself more accurately the more it's observed. The mundane feeds the profound.
 
 The convention lifecycle model (Phases 1-9 above) is the Cultural Engine's core analytical framework. Given a song's production date and genre placement, the Cultural Engine evaluates the convention's entrenchment function at that point and returns the signed float. The sign and magnitude together tell the Interpretive Engine what the convention's presence MEANS.
 
@@ -284,7 +284,7 @@ A reactivated convention carries its full lifecycle as additional information. T
 
 1. **What exactly are the chromosome territories?** We've said genres are territories. But genres are fuzzy, overlapping, contested. Chromosome territories in biology have measurable boundaries (TADs — topologically associated domains). What are the measurable boundaries of a genre-territory? The Prescriptive Genre Prints are a first attempt, but they're theoretical. The Descriptive Genre Prints might converge on empirical territory boundaries as n increases.
 
-2. **~~What is Music's karyotype?~~** RESOLVED (Alex, 11 Feb 2026). The karyotype is not a count — it's a **terrain**. A spectrogram turned flat into a heat map with peaks and valleys. Each peak is a chromosome territory (a genre). Height = chromosome density (how many songs cluster there). Ridges between peaks = lineage paths (evolutionary routes along which genetic material flowed between territories). Valleys = transition zones where genre boundaries gradient into each other. The terrain is continuous — no walls, only crossfades.
+2. **~~What is Music's karyotype?~~** RESOLVED (11 Feb 2026). The karyotype is not a count — it's a **terrain**. A spectrogram turned flat into a heat map with peaks and valleys. Each peak is a chromosome territory (a genre). Height = chromosome density (how many songs cluster there). Ridges between peaks = lineage paths (evolutionary routes along which genetic material flowed between territories). Valleys = transition zones where genre boundaries gradient into each other. The terrain is continuous — no walls, only crossfades.
 
     The chromosome space is bounded by the physics of sound: ~20–20,000 cycles of amplitude within a decibel range, per second, across typical song duration, multiplied by polyphony. The chromosome is a waveform — a path through this space. The karyotype is the collection of all paths (songs) that have been drawn with intent, organised spatially by genetic similarity. The Descriptive Genre Prints build this terrain empirically — every song analyzed is a pin dropped on the map. At scale, the full topology emerges: where the peaks are, how they connect, where the boundaries gradient. See `karyotype-terrain.html` for visualisation.
 
@@ -297,5 +297,5 @@ A reactivated convention carries its full lifecycle as additional information. T
 ---
 
 *Drafted 11 February 2026*
-*Alex & Claude, from a conversation about gated drums*
+*The listener & Claude, from a conversation about gated drums*
 *"When does a genre convention become generic?" → "When a neutral allele reaches fixation."*

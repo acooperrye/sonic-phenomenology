@@ -132,7 +132,7 @@ EquipmentReport {
 - Attack CV < 0.08 â†’ programmed
 - 2/3 indicators positive â†’ classified as programmed
 
-**Key insight from Alex**: When synths/drums replicate natural instruments, they betray themselves through mathematically clean velocities and exposures. A real guitarist's palm mutes vary slightly every time. A Fairlight-triggered palm mute sample is identical every time. The variation IS the fingerprint.
+**Key insight from the listener**: When synths/drums replicate natural instruments, they betray themselves through mathematically clean velocities and exposures. A real guitarist's palm mutes vary slightly every time. A Fairlight-triggered palm mute sample is identical every time. The variation IS the fingerprint.
 
 **What this gates**: If a region is classified as organic with high confidence, skip synthesis family classification (it's not a synth). This saves compute.
 

@@ -1,6 +1,6 @@
 # MODULE: PERCUSSION
 ## Status: DRAFT — Step 1.5 (shape-first) partially validated against Phoneline (10 Feb 2026). Full pipeline not yet validated end-to-end.
-## Origin: Alex's observation that tempo is the most algorithmic axis once resolved
+## Origin: the listener's observation that tempo is the most algorithmic axis once resolved
 
 ---
 
@@ -90,11 +90,11 @@ But once tempo is established, it generates the strongest expectations of any mu
 
 ## DISCOVERY METHOD
 
-### Step 0: The guiding number (Alex, 11 Feb 2026)
+### Step 0: The guiding number (11 Feb 2026)
 
 Before any audio processing, you already have a tempo and a meter. The BPM is on the Spotify page, the Beatport listing, the production notes, the DJ database. The time signature is overwhelmingly 4/4 in western music — it's at the front of every bar of notation for a reason. This is your first phenotypic data point, and it arrives from the web engine before a single sample is processed.
 
-**The frame is not purely cultural convention.** (Alex, 11 Feb 2026.) The mechanical properties of sound waves constrain what temporal structures are viable. The reason 120 BPM clusters as the most common tempo isn't arbitrary — it's near resting heart rate, near walking cadence, and it's where sub-bass has enough headroom to complete cycles while repeating fast enough to be rhythmic (see feltness module headroom analysis). The reason the 8-bar phrase is the chunking unit isn't arbitrary — at 120 BPM it's ~16 seconds, roughly the window of short-term musical memory and comfortable breath cycle. The guiding number has two legs: cultural convention (BPM from Spotify, genre norms) and acoustic physics (propagation, resonance, physiological coupling). The convention grew around the physics. What humans experience as "this tempo feels right" is the integrated readout of those physical constraints. What the system can see is each constraint individually — spectral flux, IOI distributions, envelope shapes, phase relationships. The vibes are the physics, decomposed.
+**The frame is not purely cultural convention.** (11 Feb 2026.) The mechanical properties of sound waves constrain what temporal structures are viable. The reason 120 BPM clusters as the most common tempo isn't arbitrary — it's near resting heart rate, near walking cadence, and it's where sub-bass has enough headroom to complete cycles while repeating fast enough to be rhythmic (see feltness module headroom analysis). The reason the 8-bar phrase is the chunking unit isn't arbitrary — at 120 BPM it's ~16 seconds, roughly the window of short-term musical memory and comfortable breath cycle. The guiding number has two legs: cultural convention (BPM from Spotify, genre norms) and acoustic physics (propagation, resonance, physiological coupling). The convention grew around the physics. What humans experience as "this tempo feels right" is the integrated readout of those physical constraints. What the system can see is each constraint individually — spectral flux, IOI distributions, envelope shapes, phase relationships. The vibes are the physics, decomposed.
 
 ```
 GuidingPrior {
@@ -150,7 +150,7 @@ Before deriving intervals, classify each onset event by tracing its frequency tr
 
 **Why this step exists:** Step 1 finds events. But in shared frequency bands (especially 30-150 Hz where kick and bass coexist), the onset list contains multiple source types mixed together. If you derive intervals from an unclassified list, different sources smear each other's timing distributions, producing flat phase maps where no pattern emerges. Phoneline demonstrated this failure: 1,434 transient events in the low band included kick, bass synth onsets, snare bleed, and hi-hat leakage. Five magnitude-based methods failed to separate them. Shape-first classification solved it.
 
-**The principle:** Magnitude is relative (depends on mix balance). Shape is intrinsic (depends on source physics). A kick drum sweeps downward because the drum head's tension dissipates after impact. That trajectory persists regardless of amplitude, compression, EQ, or layering. "You don't see a speaker making the kick drum noises but you hear them clear as crystal" — the shape persists through the medium. (Alex Cooper-Rye, 10 Feb 2026.)
+**The principle:** Magnitude is relative (depends on mix balance). Shape is intrinsic (depends on source physics). A kick drum sweeps downward because the drum head's tension dissipates after impact. That trajectory persists regardless of amplitude, compression, EQ, or layering. "You don't see a speaker making the kick drum noises but you hear them clear as crystal" — the shape persists through the medium. (The listener Cooper-Rye, 10 Feb 2026.)
 
 ```
 Per-event shape classification:
@@ -230,7 +230,7 @@ ElementMeter {
                                // (not t=0, not a shared downbeat — THIS element's first hit)
 
   // The element's own cycle
-  // The bar is the byte. The 8-bar phrase is the word. (Alex, 11 Feb 2026)
+  // The bar is the byte. The 8-bar phrase is the word. (11 Feb 2026)
   // A kick doesn't just repeat every bar — its structural variation
   // (where it doubles, where it drops, where the fill lands) repeats
   // over 8 bars. The 8-bar phrase is the default cycle_length hypothesis
@@ -590,7 +590,7 @@ A snare with 200ms of reverb tail will produce spectral energy well past its gri
 ### Echo and delay effects
 A single snare hit through a dotted-eighth delay will produce onsets at the original position AND at positions that are NOT on the grid (dotted eighth = 0.75 beats, which doesn't land on any standard subdivision). The echoed hits will typically be lower amplitude. The amplitude gate (e.g. 40% of peak) flags low-amplitude onsets as candidates for further discrimination — but the gate alone does not determine whether a quiet hit is an echo or a ghost note. See Ghost Note Discrimination below.
 
-### Ghost note discrimination (Alex, 11 Feb 2026)
+### Ghost note discrimination (11 Feb 2026)
 
 Ghost notes are quiet, deliberate hits that are part of the groove. Echoes are artefacts of delay processing. Both are low-amplitude. The amplitude gate catches both. Telling them apart requires a three-part test, applied in order:
 
@@ -743,13 +743,13 @@ This module refines what SpectralRoster can say about percussive roles by adding
 
 ## OPEN QUESTIONS
 
-1. ~~**Polyrhythm.**~~ **RESOLVED (Alex, 11 Feb 2026).** Per-element meters handle this natively. Each element has its own IOI. If two elements have a non-integer ratio (e.g. 3:4), that's polyrhythm — visible directly in the MeterRelationship ratios. No special handling needed because the model never assumed a shared grid in the first place. The `ratio_clean` flag in MeterRelationship marks whether each pair shares a simple integer ratio or not.
+1. ~~**Polyrhythm.**~~ **RESOLVED (11 Feb 2026).** Per-element meters handle this natively. Each element has its own IOI. If two elements have a non-integer ratio (e.g. 3:4), that's polyrhythm — visible directly in the MeterRelationship ratios. No special handling needed because the model never assumed a shared grid in the first place. The `ratio_clean` flag in MeterRelationship marks whether each pair shares a simple integer ratio or not.
 
-2. ~~**Non-4/4 time.**~~ **RESOLVED (Alex, 11 Feb 2026).** Per-element meters eliminate the problem entirely. Each element has its own IOI in milliseconds, its own cycle length, its own anchor. No subdivision names needed. Cross-element relationships are expressed as ratios, not as positions within a shared bar. Time signatures are derived bottom-up as the GCD of element IOIs (if one exists), not assumed top-down. Waltz, 6/8, 5/4, 7/8, polymetric — all handled natively because the model never assumes a meter in the first place.
+2. ~~**Non-4/4 time.**~~ **RESOLVED (11 Feb 2026).** Per-element meters eliminate the problem entirely. Each element has its own IOI in milliseconds, its own cycle length, its own anchor. No subdivision names needed. Cross-element relationships are expressed as ratios, not as positions within a shared bar. Time signatures are derived bottom-up as the GCD of element IOIs (if one exists), not assumed top-down. Waltz, 6/8, 5/4, 7/8, polymetric — all handled natively because the model never assumes a meter in the first place.
 
 3. **Sample-chopped breaks.** Breakcore and jungle chop and rearrange breakbeats. The original break has a grid; the chopped version may not. Individual hits land at positions that reference the original break's feel while violating the song's own grid. This may look like "unexpected_present" everywhere when it's actually a deliberate resequencing.
 
-4. ~~**Ghost notes and velocity layers.**~~ **RESOLVED (Alex, 11 Feb 2026).** Three-part test: (1) web engine prior — is this genre/production context known for ghost notes? (2) grid-locked gate lowering — only look for quiet hits at confirmed grid positions, not between them (echoes are off-grid, ghosts are on-grid), (3) spectral isolation — confirm the band is clean at that timestamp, nothing else bleeding in. See "Ghost Note Discrimination" section above.
+4. ~~**Ghost notes and velocity layers.**~~ **RESOLVED (11 Feb 2026).** Three-part test: (1) web engine prior — is this genre/production context known for ghost notes? (2) grid-locked gate lowering — only look for quiet hits at confirmed grid positions, not between them (echoes are off-grid, ghosts are on-grid), (3) spectral isolation — confirm the band is clean at that timestamp, nothing else bleeding in. See "Ghost Note Discrimination" section above.
 
 5. **Continuous percussion (shakers, tambourines, maracas).** These don't have discrete onsets in the same way — they're textural, filling space between beats. They may register as 100% fill at very high subdivisions, which is normal, not fused. Need a "continuous_texture" element type distinct from discrete hits.
 

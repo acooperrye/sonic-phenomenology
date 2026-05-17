@@ -1,6 +1,6 @@
 # Sonic Phenomenology
 
-A music analysis framework. Alex feels, Claude reads. Convergence across independent axes is the signal.
+A music analysis framework. You feel, Claude reads. Convergence across independent axes is the signal.
 
 **The dictionary of what music does to a body.**
 
@@ -98,7 +98,6 @@ Each engine folder is self-contained: its own README, spec, bound code, and boun
 | `architecture-overview.md` | Master architecture map — phase flow, versioning contract, component map |
 | `architecture-linear-flow.md` | Deeper top-down reference — two-phase pipeline detail |
 | `liner-notes.md` | Album sleeve — extended writing on what this is, how it works, principles |
-| `brief-of-self.md` | Onboarding for a Claude collaborator joining a session |
 
 ---
 
@@ -127,5 +126,5 @@ Coverage gaps the framework knows about:
 ## Two entry points
 
 ```
-Alex feels. Claude reads. Convergence across independent axes is the signal.
+You feel. Claude reads. Convergence across independent axes is the signal.
 ```

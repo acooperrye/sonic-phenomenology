@@ -93,7 +93,7 @@ CulturalDescriptor {
 
 ### Convention (the unit of the convention bank)
 
-**DESIGN PRINCIPLE (Alex, 10 Feb 2026):** A convention is not a prose description that gets translated into a binary search instruction. The convention IS the binary fingerprint. The cultural engine doesn't tell the binary engine what to look for in natural language — it hands it fingerprint patterns ranked by likelihood for this genre. The convention and the detection instruction are the same object.
+**DESIGN PRINCIPLE (10 Feb 2026):** A convention is not a prose description that gets translated into a binary search instruction. The convention IS the binary fingerprint. The cultural engine doesn't tell the binary engine what to look for in natural language — it hands it fingerprint patterns ranked by likelihood for this genre. The convention and the detection instruction are the same object.
 
 This means: Web Engine commits genre → Cultural Engine receives genre → genre maps to an ordered set of fingerprint references → each fingerprint defines both the convention (what's expected) and the detection shape (what to measure), with pass level, zoom level, and masking/subtractive analysis parameters.
 
@@ -1292,7 +1292,7 @@ VIOLATION 1: universal.drums_are_rhythmic
   Binary evidence: HPSS reads 70.8% harmonic in hi-mid band. Amen snare hits at
     ~5.7/sec individually, but composite break density (all percussion) crosses the
     threshold where repetition rate enters tonal territory. The percussion has BECOME
-    a harmonic texture — a "single somewhat detuned keyboard note" (Alex).
+    a harmonic texture — a "single somewhat detuned keyboard note" (The listener).
 
   Cultural evidence: Violates most deeply entrenched musical convention (entrenchment 1.0).
     Even the breakcore-adjusted threshold (onset_rate < 12) is designed to accommodate
@@ -1438,7 +1438,7 @@ SOMATIC CONFIRMATION (from dictionary, correspondence #15):
 
 5. ~~**Convention evolution.** Conventions change over time. The 808 was once unusual; now it's a convention. Autotune was once a violation; now it's expected. The convention bank needs to be era-aware — what was a violation in 2005 may be a convention by 2025. Timestamp all conventions.~~ **PARTIALLY RESOLVED (11 Feb 2026):** The Genomic Frame (`genomic-frame.md`) provides the formal model for convention evolution — a 9-phase lifecycle mapped from population genetics (Mutation → Transposition → Polymorphism → Fixation → Selective Sweep → Genericization → Negative Selection → Epigenetic Silencing → Reactivation). The `entrenchment` field is now a signed float: magnitude = allele frequency, sign = direction of travel (+rising, -falling). Algebraic lifecycle curves (e.g. `e(t) = 0.9·e^(-0.3(t-1986)²)` for gated reverb) are available for precision. The `reactivated` boolean flags conventions that have returned from silencing (carrying different semantic weight). **Remaining:** curve parameterization sources need documenting (Web Engine retrieval as flywheel data), and era-awareness needs formalizing as a lookup function that evaluates `e(t)` at the song's release year.
 
-6. **Interaction with somatic dictionary.** The somatic dictionary contains correspondences that are essentially felt conventions — "sub-bass at this onset ratio = punch," "sustained sub-bass = atmosphere." These are calibrated to Alex, not universal. Should the Cultural Engine have access to the somatic dictionary as a source of listener-specific conventions?
+6. **Interaction with somatic dictionary.** The somatic dictionary contains correspondences that are essentially felt conventions — "sub-bass at this onset ratio = punch," "sustained sub-bass = atmosphere." These are calibrated to the listener, not universal. Should the Cultural Engine have access to the somatic dictionary as a source of listener-specific conventions?
 
 7. **Multiple simultaneous violations.** Circle Pit violates at least two conventions simultaneously (drums→tonal, heard/felt inversion). Does the interaction between violations compound the bridge effect, or does each operate independently? SOPHIE similarly has multiple simultaneous operations (referent excision + vocal non-address + synthetic materiality). The Interpretive Engine probably handles this, but the Cultural Engine should flag when multiple violations interact.
 
@@ -1526,7 +1526,7 @@ Different genres may need different entrenchment sensitivity. A genre with deep 
 
 ## DOES NOT KNOW
 - How to interpret violations artistically (Interpretive Engine's job)
-- The somatic dictionary's correspondences (Alex-calibrated, belongs to Interpretive)
+- The somatic dictionary's correspondences (The listener-calibrated, belongs to Interpretive)
 - The thematic vector (Web Engine output; Cultural reads `production` and `era_conventions`, not lyrics-derived themes)
 - Whether a violation is meaningful — only that it exists, what convention it violates, and what prior the listener needs to register it
 

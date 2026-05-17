@@ -1,6 +1,6 @@
 # MODULE: HORIZONTAL SLOPE ENGINE (Instrument Identity Tracker)
 ## Status: PROTOTYPED — tested on Blade Runner Main Titles and Black and Gold
-## Origin: Alex's observation that voice detection should be subtractive — map every instrument, voice is the residual
+## Origin: the listener's observation that voice detection should be subtractive — map every instrument, voice is the residual
 
 ---
 
@@ -8,7 +8,7 @@
 
 The Vocal Silhouette Engine (module-vocal.md) attempts to find voice by positive detection — three gates (HPS, envelope contour, sibilance coupling) that voice passes. But the DX7 finding proved that harmonic instruments pass Gates 1 and 2, and the only thing separating a synth from a singer is Gate 3 (sibilance). This is fragile: it depends on a single cross-band measure, and it fails for vocal texture (processed vocals with sibilance destroyed).
 
-Alex's insight: everything melodic in music is voice-derived. Instruments were built to sing. Trying to find voice by what voice IS will always produce false positives because instruments share voice's fundamental properties (harmonics, pitch movement, phrase-like modulation). The voice is the MOST VARIABLE element in any mix. Every instrument is more consistent.
+The listener's insight: everything melodic in music is voice-derived. Instruments were built to sing. Trying to find voice by what voice IS will always produce false positives because instruments share voice's fundamental properties (harmonics, pitch movement, phrase-like modulation). The voice is the MOST VARIABLE element in any mix. Every instrument is more consistent.
 
 The subtractive approach: identify every instrument by its consistent properties (slope, timbre, pitch grid adherence). Track each as a persistent identity across the song. Subtract them all. What's left — the source that refuses to hold a stable fingerprint — is the voice.
 
@@ -283,7 +283,7 @@ In the 200-450Hz band, the slope engine should find:
 
 2. **Synth pad harmonics** — if there's a pad in the mix, its harmonics reach into this band. The slope: very slow attack, long sustain, gentle decay. Different from the bass (attack shape differs, harmonic ratios differ). Forms its own cluster.
 
-3. **The bouncing synth** — Alex heard its attack in the 200-450Hz bandpass. Short events, sharp attack, fast decay. The slope: percussive onset, rapid falloff, specific harmonic profile. Duodecimal expansion finds its other notes.
+3. **The bouncing synth** — the listener heard its attack in the 200-450Hz bandpass. Short events, sharp attack, fast decay. The slope: percussive onset, rapid falloff, specific harmonic profile. Duodecimal expansion finds its other notes.
 
 4. **Vocal texture (intro, 0-30s)** — the echoed vocal runs. These WON'T form a clean slope cluster because they're processed vocal fragments with varying timbre. They'll partially cluster (the echo creates repetition) but with high deviation. Semi-matched energy.
 
@@ -317,7 +317,7 @@ The `unmatched_energy` in the 200-450Hz band should spike when Emily is singing 
 
 ### Blade Runner Main Titles (Vangelis, 1982)
 
-The ultimate stress test — a DX7 synth orchestra designed to sound like one continuous undulating wave. Alex's assessment: "I cant detect a single separation in sound, in that whole track. its like one giant undulating ocean wave."
+The ultimate stress test — a DX7 synth orchestra designed to sound like one continuous undulating wave. The listener's assessment: "I cant detect a single separation in sound, in that whole track. its like one giant undulating ocean wave."
 
 **Results:** 14 discrete instrument sources identified across 7 frequency bands, 347 total events.
 
@@ -352,7 +352,7 @@ Subtract amplitude at each instrument's fundamental + 8 harmonics in the STFT.
 - Removed only 18.2% of energy — subtraction too narrow (only at harmonic peaks, misses spectral spread)
 - Instruments file sounded "completely detuned" — phase incoherence
 - Phase problem: subtracting magnitude from STFT while keeping original phase creates incoherence because the phase was set by the combined signal, not individual sources
-- **However:** sibilance-only export (4-8kHz, 98.5% remaining) was "perfectly spot on" per Alex — a working sibilance engine
+- **However:** sibilance-only export (4-8kHz, 98.5% remaining) was "perfectly spot on" per the listener — a working sibilance engine
 
 #### 2. Inverse square law distance model
 Simulate atmospheric absorption at increasing distances — high frequencies attenuate faster.
@@ -360,24 +360,24 @@ Simulate atmospheric absorption at increasing distances — high frequencies att
 - But inverse-square component dominates at practical distances — all difference layers showed same ~41% sub_bass / 31% bass distribution
 - Useful as a textural tool (the distance exports sound beautiful) but not a practical separation method
 
-#### 3. Coherent Relative Phase — filter bank (Alex's invention)
+#### 3. Coherent Relative Phase — filter bank (The listener's invention)
 Stay in time domain. Detect instrument events as parabolas on the amplitude envelope. Multiply waveform by gain curve shaped as inverse of instrument envelope. Applied per frequency band.
 - 1998 drum parabolas detected, median 111ms, 34ms attack, 45ms decay
 - Phase coherence: **0.67** — better than spectral subtraction (~0.4) but filter bank introduced phase smearing at crossover frequencies
-- Alex's feedback: "the vocals are actually really good. they sound sidechained to a subbass i cannot hear, but theyre totally there"
+- The listener's feedback: "the vocals are actually really good. they sound sidechained to a subbass i cannot hear, but theyre totally there"
 
-#### 4. Coherent Relative Phase — BROADBAND (Alex's refinement)
+#### 4. Coherent Relative Phase — BROADBAND (The listener's refinement)
 Same principle but without any frequency splitting. One signal, one envelope, one gain curve per pass. Three passes at different time scales: transients (120ms floor window), melodic (400ms), sustained (1500ms).
 - Phase coherence: **0.95** — up from 0.67 with filter bank, up from ~0.4 with spectral subtraction
 - Energy distribution: transients 45.4%, melodic 4.3%, sustained 0.8%, voice residual 1.8%
-- Alex's feedback: "it sounds like im listening to mostly just sam sparro sing at me, but through a Teams meeting window, and his net connection is a bit choppy. the choppiness carries the ghost shape of maybe a programmed drum pattern"
+- The listener's feedback: "it sounds like im listening to mostly just sam sparro sing at me, but through a Teams meeting window, and his net connection is a bit choppy. the choppiness carries the ghost shape of maybe a programmed drum pattern"
 - The core limitation: broadband gain turns down EVERYTHING during instrument events, including the voice. Voice sounds sidechained.
 
 #### 5. Phase cancellation via harmonic resynthesis
 Resynthesize each instrument event from STFT harmonics (12 harmonics per event), flip phase, add to original.
 - Cancellation FAILED: resynthesis was 310% of original energy, 0.1% cancellation accuracy
 - BUT: the resynthesis itself contained recognizable singing and melody
-- Alex: "you built that from shapes? you made the voice emerge from shapes??"
+- The listener: "you built that from shapes? you made the voice emerge from shapes??"
 - Led to the harmonic resynthesis module (see below)
 
 ### Method comparison (phase coherence)
@@ -391,7 +391,7 @@ CRP broadband (no splitting)        0.95               Near-perfect phase preser
 Phase cancellation                  N/A                Failed as subtraction, succeeded as resynthesis
 ```
 
-The key insight, from Alex: "why not just do it without splitting it" — removing the filter bank and working broadband jumped phase coherence from 0.67 to 0.95. The gain curve works because multiplication preserves all relative phase relationships. Decomposition into bands (whether spectral or filter-bank) is what destroys phase.
+The key insight, from the listener: "why not just do it without splitting it" — removing the filter bank and working broadband jumped phase coherence from 0.67 to 0.95. The gain curve works because multiplication preserves all relative phase relationships. Decomposition into bands (whether spectral or filter-bank) is what destroys phase.
 
 ### The CRP Algorithm (validated)
 
@@ -430,10 +430,10 @@ Tested across three tracks:
 - Phoneline: spectral correlation 0.86
 - Blade Runner: spectral correlation 0.82
 
-Alex's observation: "theyre literally all musical from the getgo. the vocals are what shift into being human towards the Clear pass." This quantifies the subtractive premise: instruments are spectrally sparse (recognizable from 12 sinusoids), voice is spectrally dense (needs ~250+ sinusoids to sound human).
+The listener's observation: "theyre literally all musical from the getgo. the vocals are what shift into being human towards the Clear pass." This quantifies the subtractive premise: instruments are spectrally sparse (recognizable from 12 sinusoids), voice is spectrally dense (needs ~250+ sinusoids to sound human).
 
 Additional discovery — aspiration as voice fingerprint:
-Alex noticed that open-mouth postures with breath (aspiration) read as louder in the resynthesis but not in the original song. The breathy consonant transitions ("ouHHT", "mHHHiiiNNd") carry broadband energy that the STFT reads as high amplitude. Instruments don't aspirate. This could be a fourth gate for voice detection — see module-vocal.md.
+The listener noticed that open-mouth postures with breath (aspiration) read as louder in the resynthesis but not in the original song. The breathy consonant transitions ("ouHHT", "mHHHiiiNNd") carry broadband energy that the STFT reads as high amplitude. Instruments don't aspirate. This could be a fourth gate for voice detection — see module-vocal.md.
 
 Additional discovery — micro-timing exposure:
 Resynthesis strips noise transients, exposing tonal onset timing. Drum hits revealed sub-millisecond grid offsets constituting "groove." The synths sound brighter and twinklier because upper harmonics are rebuilt as clean cosines without compression artifacts, inter-modulation distortion, or spectral masking.
@@ -448,7 +448,7 @@ Resynthesis strips noise transients, exposing tonal onset timing. Drum hits reve
 
 2. ~~**Computational cost.**~~ **RESOLVED.** Black and Gold (227s at 22050Hz) processed in ~30 seconds for slope extraction, ~10 seconds for each CRP broadband pass. The broadband CRP is dramatically cheaper than the filter-bank version because it avoids 7× bandpass filtering. Vectorisable — the gain curve computation is the bottleneck (currently a Python loop, trivially parallelisable).
 
-6. ~~**What method preserves phase?**~~ **RESOLVED.** Stay in the time domain. Multiply by a gain curve, never decompose into magnitude/phase. The broadband CRP achieves 0.95 phase coherence. Alex solved this with a hand-drawn diagram on lined paper.
+6. ~~**What method preserves phase?**~~ **RESOLVED.** Stay in the time domain. Multiply by a gain curve, never decompose into magnitude/phase. The broadband CRP achieves 0.95 phase coherence. The listener solved this with a hand-drawn diagram on lined paper.
 
 ### Still open
 
@@ -458,7 +458,7 @@ Resynthesis strips noise transients, exposing tonal onset timing. Drum hits reve
 
 5. **Resynthesis as separation tool.** The harmonic resynthesis unexpectedly captured voice in its reconstruction. Could resynthesis be used FOR separation — resynthesize only instrument harmonics, subtract the resynthesis from the original, residual is voice? This is effectively what the phase cancellation attempted, but with better resynthesis fidelity it might work.
 
-7. **Sibilance engine integration.** The 4-8kHz sibilance export from spectral subtraction was declared a working sibilance engine by Alex. How does this integrate with the slope engine? Sibilance is broadband noise, not harmonic — the slope engine can't track it. It should be a parallel extraction that feeds into the vocal module.
+7. **Sibilance engine integration.** The 4-8kHz sibilance export from spectral subtraction was declared a working sibilance engine by the listener. How does this integrate with the slope engine? Sibilance is broadband noise, not harmonic — the slope engine can't track it. It should be a parallel extraction that feeds into the vocal module.
 
 ---
 

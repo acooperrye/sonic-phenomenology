@@ -44,7 +44,7 @@ DictionaryEntry {
   genre:            string          // confirmed genre
   bridge_type:      string          // Concealment | Compensation | Contradiction | Refusal | Conceit
   bridge_span:      string          // short | medium | long
-  somatic_report:   string          // Alex's documented somatic response
+  somatic_report:   string          // the listener's documented somatic response
   validated:        bool
   
   // Cached engine outputs (for testing without re-running)

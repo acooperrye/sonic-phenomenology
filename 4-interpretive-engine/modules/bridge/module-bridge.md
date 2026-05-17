@@ -201,7 +201,7 @@ Everything feeds into the Bridge Module. Nothing defines HOW it works. This is t
 
 **The fork:** Does the Bridge Module PREDICT bridge types from audio (with somatic validation), or does it INTERPRET somatic reports (with audio context)?
 
-**Evidence for interpretation:** Somatic data is Tier 1. Computational data alone has never correctly identified a bridge type. Alex's body tells us what the bridge IS; the computation tells us WHY. This points toward interpretation — the module takes a somatic report and searches for the structural explanation.
+**Evidence for interpretation:** Somatic data is Tier 1. Computational data alone has never correctly identified a bridge type. The listener's body tells us what the bridge IS; the computation tells us WHY. This points toward interpretation — the module takes a somatic report and searches for the structural explanation.
 
 **Evidence for prediction:** The Cultural Engine can now flag convention violations automatically. Three violations in Circle Pit all signal Type 7 before any human listens. The ConventionReport narrows the bridge type candidates computationally. This suggests prediction CAN work for Types 6-7 (convention-based) even if it can't work for Types 1-5 (theme-based).
 
