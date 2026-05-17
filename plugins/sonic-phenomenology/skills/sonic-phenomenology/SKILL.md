@@ -13,7 +13,7 @@ description: >
   at an Activation Layer, applies cultural conventions, then runs
   interpretive bridges that look for somatic-structural tension. The user's
   felt response is final ground truth.
-version: 0.1.2
+version: 0.1.3
 ---
 
 # Sonic Phenomenology
